@@ -1,8 +1,5 @@
 # frozen_string_literal: true
-
 require 'active_support/core_ext/hash/slice'
-require 'pry'
-# frozen_string_literal: true
 
 def add_to_cart(cart, product)
   # TODO: you get a cart and a product. Add the product to the cart!
@@ -24,8 +21,15 @@ def cart_to_s(cart)
   # puts for better looking terminal
   puts
   if cart.count.zero?
-    puts('your cart is empty, add items to cart')
-    interface
+    puts('Your cart is empty, add items to cart')
+    puts
+    puts("Or write '3' if you want to exit shop")
+    answer = gets.chomp.downcase
+    if answer == '3'
+      exit(true)
+    else
+      interface
+    end
   else
     cart.join(', ').green
   end
