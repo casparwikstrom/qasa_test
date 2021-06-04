@@ -53,14 +53,15 @@ def interface
 
       if product_in_store?(product)
         add_to_cart(cart, product)
-        puts "your current cart is #{cart_to_s(cart)}"
+        puts "Your current cart is #{cart_to_s(cart)}"
       else
         # otherwise show error
         puts "We don't have any #{product} in store, sorry!"
       end
 
     when '2'
-      puts "your current cart is #{cart_to_s(cart)}"
+      puts "Your current cart is #{cart_to_s(cart)}"
+      puts 'What would you like to remove'
 
       product = gets.chomp.downcase
       if product == ''
@@ -75,8 +76,10 @@ def interface
   end
   display_cart(cart, store_items)
 end
+
 # simple starting of method
 puts "Welcome to your local shop, say 'hello' to enter"
+
 answer = gets.chomp.downcase
 if answer == 'hello'
   interface

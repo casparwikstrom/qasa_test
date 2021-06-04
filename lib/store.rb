@@ -1,9 +1,5 @@
-# frozen_string_literal: true
-
-require 'pry'
 require 'colorize'
 require 'rubocop'
-# frozen_string_literal: true
 
 def store_items
   # Data
